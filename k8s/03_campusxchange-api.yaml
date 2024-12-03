@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: campusxchange-api-svc
 spec:
-  type: NodePort
+  type: ClusterIP
   selector:
     app: campusxchange-api-pod
   ports:
@@ -11,7 +11,7 @@ spec:
       protocol: TCP
       port: 8080
       targetPort: 8080
-      nodePort: 30090
+
 ---
 apiVersion: apps/v1
 kind: Deployment
